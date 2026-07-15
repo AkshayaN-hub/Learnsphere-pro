@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LearnSphere Pro</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="responsive.css">
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- Loader -->
+
+<div class="loader">
+<div class="spinner"></div>
+</div>
+
+<!-- Navigation -->
+
+<nav>
+
+<div class="logo">
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+LearnSphere
+
+</div>
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#courses">Courses</a></li>
+
+<li><a href="#planner">Planner</a></li>
+
+<li><a href="#quiz">Quiz</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+<div class="nav-buttons">
+
+<button id="darkMode">
+
+<i class="fa-solid fa-moon"></i>
+
+</button>
+
+<button class="login">
+
+Login
+
+</button>
+
+</div>
+
+</nav>
+
+<!-- Hero -->
+
+<section class="hero" id="home">
+
+<div class="hero-left">
+
+<h1>
+
+Upgrade Your
+
+<span>Learning Journey</span>
+
+</h1>
+
+<p>
+
+Master Web Development with interactive courses,
+daily planners, quizzes and progress tracking.
+
+</p>
+
+<div class="hero-buttons">
+
+<button class="btn1">
+
+Explore Courses
+
+</button>
+
+<button class="btn2">
+
+Get Started
+
+</button>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<img src="images/hero.jpg" alt="Hero">
+
+</div>
+
+</section>
+<!-- Features -->
+
+<section class="features">
+
+<h2>
+
+Why Choose LearnSphere?
+
+</h2>
+
+<div class="feature-grid">
+
+<div class="card">
+
+<i class="fa-solid fa-book-open"></i>
+
+<h3>Interactive Courses</h3>
+
+<p>Practical coding lessons with projects.</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<h3>Progress Tracker</h3>
+
+<p>Track daily improvement visually.</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+<h3>Study Planner</h3>
+
+<p>Create your daily study schedule.</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-brain"></i>
+
+<h3>Smart Quiz</h3>
+
+<p>Practice with interactive quizzes.</p>
+
+</div>
+
+</div>
+
+</section>
+<input
+type="text"
+id="searchCourse"
+placeholder="Search Courses...">
+<!-- Courses -->
+
+<section id="courses">
+
+<h2>Popular Courses</h2>
+
+<div class="course-container">
+
+<div class="course-card">
+
+<img src="images/html.jpg">
+
+<h3>HTML Masterclass</h3>
+
+<p>Learn HTML from beginner to advanced.</p>
+
+<button>Enroll</button>
+
+</div>
+
+<div class="course-card">
+
+<img src="images/css.jpg">
+
+<h3>CSS Bootcamp</h3>
+
+<p>Create modern responsive websites.</p>
+
+<button>Enroll</button>
+
+</div>
+
+<div class="course-card">
+
+<img src="images/js.jpg">
+
+<h3>JavaScript</h3>
+
+<p>Build dynamic websites.</p>
+
+<button>Enroll</button>
+
+</div>
+
+</div>
+
+</section>
+<!-- =======================
+STUDY PLANNER
+======================= -->
+
+<section id="planner">
+
+    <h2>📅 Study Planner</h2>
+
+    <div class="planner-container">
+
+        <div class="plan-card">
+
+            <h3>Today's Goal</h3>
+
+            <input type="text" id="taskInput" placeholder="Enter today's study goal">
+
+            <button onclick="addTask()">Save Goal</button>
+
+            <ul id="taskList"></ul>
+
+        </div>
+
+        <div class="plan-card">
+
+            <h3>Study Progress</h3>
+
+            <progress id="progressBar" value="30" max="100"></progress>
+
+            <h4 id="progressText">30% Completed</h4>
+
+            <button onclick="increaseProgress()">Update Progress</button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =======================
+QUIZ
+======================= -->
+
+<section id="quiz">
+
+    <div class="quiz-box">
+
+        <h2>🧠 Quick Quiz</h2>
+
+        <p id="question">What does HTML stand for?</p>
+
+        <button class="option">Hyper Text Markup Language</button>
+
+        <button class="option">High Transfer Machine Language</button>
+
+        <button class="option">Hyperlinks Text Management Language</button>
+
+        <button class="option">Home Tool Markup Language</button>
+
+        <button id="nextBtn">Next Question</button>
+
+    </div>
+
+</section>
+
+<!-- =======================
+NOTES
+======================= -->
+
+<section id="notes">
+
+<h2>📝 Quick Notes</h2>
+
+<div class="note-box">
+
+<textarea id="noteArea"
+placeholder="Write your study notes here..."></textarea>
+
+<button onclick="saveNotes()">
+
+Save Notes
+
+</button>
+
+</div>
+
+</section>
+
+<!-- =======================
+DASHBOARD
+======================= -->
+
+<section id="dashboard">
+
+<h2>📊 Dashboard</h2>
+
+<div class="feature-grid">
+
+<div class="card">
+
+<h3>Courses Completed</h3>
+
+<h1>12</h1>
+
+</div>
+
+<div class="card">
+
+<h3>Hours Studied</h3>
+
+<h1>150+</h1>
+
+</div>
+
+<div class="card">
+
+<h3>Certificates</h3>
+
+<h1>8</h1>
+
+</div>
+
+<div class="card">
+
+<h3>Projects</h3>
+
+<h1>20+</h1>
+
+</div>
+
+</div>
+
+</section>
+<!-- Testimonials -->
+
+<section id="testimonials">
+
+<h2>What Our Students Say</h2>
+
+<div class="testimonial-container">
+
+<div class="testimonial-card">
+
+<img src="https://i.pravatar.cc/120?img=11" alt="Student">
+
+<h3>Rahul Sharma</h3>
+
+<p>
+⭐⭐⭐⭐⭐
+</p>
+
+<p>
+"LearnSphere completely changed my learning experience.
+The quizzes and planner helped me stay consistent."
+</p>
+
+</div>
+
+<div class="testimonial-card">
+
+<img src="https://i.pravatar.cc/120?img=25" alt="Student">
+
+<h3>Sneha Reddy</h3>
+
+<p>
+⭐⭐⭐⭐⭐
+</p>
+
+<p>
+"The UI is beautiful and the notes section is amazing.
+Highly recommended!"
+</p>
+
+</div>
+
+<div class="testimonial-card">
+
+<img src="https://i.pravatar.cc/120?img=30" alt="Student">
+
+<h3>Arjun Kumar</h3>
+
+<p>
+⭐⭐⭐⭐⭐
+</p>
+
+<p>
+"I improved my web development skills using LearnSphere.
+Fantastic platform!"
+</p>
+
+</div>
+
+</div>
+
+</section>
+<section id="achievements">
+
+<h2>Our Achievements</h2>
+
+<div class="achievement-grid">
+
+<div class="achievement-card">
+
+<h1 id="students">5000+</h1>
+
+<p>Students</p>
+
+</div>
+
+<div class="achievement-card">
+
+<h1 id="courses">150+</h1>
+
+<p>Courses</p>
+
+</div>
+
+<div class="achievement-card">
+
+<h1 id="projects">700+</h1>
+
+<p>Projects</p>
+
+</div>
+
+<div class="achievement-card">
+
+<h1 id="certificates">1200+</h1>
+
+<p>Certificates</p>
+
+</div>
+
+</div>
+
+</section>
+<section id="faq">
+
+<h2>Frequently Asked Questions</h2>
+
+<div class="faq">
+
+<div class="faq-item">
+
+<button class="faq-btn">
+
+What is LearnSphere?
+
+</button>
+
+<div class="faq-content">
+
+<p>
+
+LearnSphere is a smart learning platform designed for students.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<button class="faq-btn">
+
+Is this course free?
+
+</button>
+
+<div class="faq-content">
+
+<p>
+
+Yes. Many beginner courses are completely free.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<button class="faq-btn">
+
+Can I get certificates?
+
+</button>
+
+<div class="faq-content">
+
+<p>
+
+Yes. Certificates are provided after successful completion.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- =======================
+CONTACT
+======================= -->
+
+<section id="contact">
+
+<h2>Contact Us</h2>
+
+<form class="contact-form" id="contactForm">
+
+<input
+type="text"
+placeholder="Your Name"
+required>
+
+<input
+type="email"
+placeholder="Email Address"
+required>
+
+<textarea
+placeholder="Write your Message"></textarea>
+
+<button type="submit">
+
+Send Message
+
+</button>
+
+</form>
+
+</section>
+
+<!-- =======================
+FOOTER
+======================= -->
+
+<footer>
+
+<h2>LearnSphere Pro</h2>
+
+<p>
+
+Empowering Students Through Modern Learning.
+
+</p>
+
+<div class="social-icons">
+
+<i class="fab fa-facebook-f"></i>
+
+<i class="fab fa-instagram"></i>
+
+<i class="fab fa-linkedin-in"></i>
+
+<i class="fab fa-github"></i>
+
+</div>
+
+<br>
+
+<p>
+
+© 2026 LearnSphere Pro | Designed by Akshaya
+
+</p>
+
+</footer>
+
+<!-- Back to Top -->
+
+<button id="topBtn">
+
+<i class="fas fa-arrow-up"></i>
+
+</button>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
